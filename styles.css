@@ -94,3 +94,20 @@ header > h1 {
   font-size: 20px;
   margin-top: 20px;
 }
+
+
+/* --- Glowing functionality --*/
+.green-glow {
+  border: 5px solid: #4dcc7d;
+  box-shadow: 0 0 15px #31b43a;
+}
+
+.red-glow {
+  border: 5px solid: ##e71829;
+  box-shadow: 0 0 15px #eb404d;
+}
+
+.gray-glow {
+  border: 5px solid: #514a42;
+  box-shadow: 0 0 15px #9c9185;
+}

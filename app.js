@@ -8,13 +8,14 @@ const rock_div = document.getElementById('r');
 const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
 
-
+//--- Randomizes the computers choice ---//
 function getComputerChoice() {
   const choices = ['r', 'p', 's'];
   const randomNumber = Math.floor(Math.random() * 3);       // Chooses a random number from 0-2
   return choices[randomNumber];
 }
 
+//--- Converts the letters to words ---//
 function convertToWord(letter) {
   if (letter === "r")
     return "Rock";
@@ -23,35 +24,47 @@ function convertToWord(letter) {
     return "Scissors";
 }
 
-
+//--- Win functionality ---//
 function win(userChoice, computerChoice) {
+  const smallerUserWord = "user".fontsize(3).sub();
+  const smallerComputerWord = "computer".fontsize(3).sub();
+  const userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  const smallerUserWord = "user".fontsize(3).sub();
-  const smallerComputerWord = "computer".fontsize(3).sub();
   result_p.innerHTML = `${convertToWord(userChoice)}${smallerUserWord} beats ${convertToWord(computerChoice)}${smallerComputerWord}. You win!`;
+  userChoice_div.classList.add('green-glow');
+  setTimeout(() => userChoice_div.classList.remove('green-glow'), 500);
   console.log("Win");
 }
 
+//--- Lose functionality ---//
 function lose(userChoice, computerChoice) {
+  const smallerUserWord = "user".fontsize(3).sub();
+  const smallerComputerWord = "computer".fontsize(3).sub();
+  const userChoice_div = document.getElementById(userChoice);
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  const smallerUserWord = "user".fontsize(3).sub();
-  const smallerComputerWord = "computer".fontsize(3).sub();
   result_p.innerHTML = `${convertToWord(userChoice)}${smallerUserWord} defeats ${convertToWord(computerChoice)}${smallerComputerWord}. You lose!`;
+  userChoice_div.classList.add('red-glow');
+  setTimeout(() => userChoice_div.classList.remove('red-glow'), 500);
   console.log("Lose");
 
 }
 
+//--- Draw functionality ---//
 function draw(userChoice, computerChoice) {
   const smallerUserWord = "user".fontsize(3).sub();
   const smallerComputerWord = "computer".fontsize(3).sub();
+  const userChoice_div = document.getElementById(userChoice);
   result_p.innerHTML = `${convertToWord(userChoice)}${smallerUserWord} ties ${convertToWord(computerChoice)}${smallerComputerWord}. You draw!`;
+  userChoice_div.classList.add('gray-glow');
+  setTimeout(() => userChoice_div.classList.remove('gray-glow'), 500);
   console.log("Draw");
 }
 
+//--- Choice functionality determines win/lose/draw ---//
 function game(userChoice) {
   const computerChoice = getComputerChoice();
   console.log("User Choice = " + userChoice);
@@ -78,7 +91,7 @@ function game(userChoice) {
   }
 }
 
-
+//--- onClick functionality ---//
 function main() {
   rock_div.addEventListener('click', function() {
     game("r");
