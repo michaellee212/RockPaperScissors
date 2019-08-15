@@ -7,11 +7,13 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById('r');
 const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
+const reset_div = document.getElementById('clear');
+
 
 //--- Randomizes the computers choice ---//
 function getComputerChoice() {
   const choices = ['r', 'p', 's'];
-  const randomNumber = Math.floor(Math.random() * 3);       // Chooses a random number from 0-2
+  const randomNumber = Math.floor(Math.random() * 3); // Chooses a random number from 0-2
   return choices[randomNumber];
 }
 
@@ -21,7 +23,7 @@ function convertToWord(letter) {
     return "Rock";
   if (letter === "p")
     return "Paper";
-    return "Scissors";
+  return "Scissors";
 }
 
 //--- Win functionality ---//
@@ -69,7 +71,7 @@ function game(userChoice) {
   const computerChoice = getComputerChoice();
   console.log("User Choice = " + userChoice);
   console.log("Comp Choice = " + computerChoice);
-  switch(userChoice + computerChoice) {
+  switch (userChoice + computerChoice) {
     case "rs":
     case "pr":
     case "sp":
@@ -91,12 +93,18 @@ function game(userChoice) {
   }
 }
 
+
+function reset() {
+  document.getElementById('user-score').innerHTML = "0";
+  document.getElementById('computer-score').innerHTML = "0";
+}
+
 //--- onClick functionality ---//
 function main() {
   rock_div.addEventListener('click', () => game("r"));
   paper_div.addEventListener('click', () => game("p"));
   scissors_div.addEventListener('click', () => game("s"));
+  reset_div.addEventListener("click", reset);
 }
 
 main();
-

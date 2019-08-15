@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Rock Paper Scissors Game</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon-16x16.png">
+</head>
+
+<body>
 
 
-<!--- Start header -->
-    <header>
-      <h1>Rock Paper Scissors</h1>
-    </header>
-<!--- End header -->
+  <!--- Start header -->
+  <header>
+    <h1>Rock Paper Scissors</h1>
+  </header>
+  <!--- End header -->
 
-<!--- Start scoreboard -->
-<div class="score-board">
-  <div id="user-label" class="badge">USER</div>
-  <div id="computer-label" class="badge">COMP</div>
+  <!--- Start scoreboard -->
+  <div class="score-board">
+    <div id="user-label" class="badge">USER</div>
+    <div id="computer-label" class="badge">COMP</div>
     <span id="user-score">0</span>:<span id="computer-score">0</span>
+  </div>
+  <!--- End scoreboard -->
+
+
+  <div class="result">
+    <p>Click Rock, Paper, or Scissors!</p>
+  </div>
+
+  <!--- Start Choices -->
+  <div class="choices">
+    <div class="choice" id="r">
+      <i class="fas fa-hand-rock fa-5x"></i>
     </div>
-<!--- End scoreboard -->
-
-
-<div class="result">
-  <p>Click Rock, Paper, or Scissors!</p>
-  </div>
-
-<!--- Start Choices -->
-<div class="choices">
-  <div class="choice" id="r">
-    <i class="fas fa-hand-rock fa-5x"></i>
-  </div>
-  <div class="choice" id="p">
+    <div class="choice" id="p">
       <i class="fas fa-hand-paper fa-5x"></i>
-  </div>
-  <div class="choice" id="s">
-    <i class="fas fa-hand-scissors fa-5x"></i>
-  </div>
-<!--- End Choices -->
+    </div>
+    <div class="choice" id="s">
+      <i class="fas fa-hand-scissors fa-5x"></i>
+    </div>
+    <!--- End Choices -->
 
 
-<p id="action-message">Choose your move!</p>
+    <p id="action-message">Choose your move!</p>
+    <br>
+    <button id="clear" type="button">Reset</button>
 
 
-  <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
-  <script src="app.js" charset="utf-8"></script>
+    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+    <script src="app.js" charset="utf-8"></script>
 
 
-  </body>
+</body>
+
 </html>
